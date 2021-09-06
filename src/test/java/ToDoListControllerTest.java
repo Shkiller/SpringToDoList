@@ -25,7 +25,7 @@ public class ToDoListControllerTest extends AbstractIntegrationTest {
         mockMvc.perform(MockMvcRequestBuilders.post("/cases/").param("caseString", "123"))
                 .andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk())
 
-                .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
+                .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.caseString").value("123"));
     }
 
@@ -35,7 +35,7 @@ public class ToDoListControllerTest extends AbstractIntegrationTest {
                 .perform(MockMvcRequestBuilders.get("/cases/"))
                 .andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk())
 
-                .andExpect(MockMvcResultMatchers.content().contentType("application/json"));
+                .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
     }
 
     @Test
@@ -44,7 +44,7 @@ public class ToDoListControllerTest extends AbstractIntegrationTest {
                 .perform(MockMvcRequestBuilders.get("/cases/{id}", "2"))
                 .andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().isOk())
 
-                .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
+                .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.caseString").value("222"));
 
     }
@@ -54,7 +54,7 @@ public class ToDoListControllerTest extends AbstractIntegrationTest {
 
         mockMvc.perform(MockMvcRequestBuilders.put("/cases/{id}","1").param("caseString", "000"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
+                .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.caseString").value("000"));;
     }
 
