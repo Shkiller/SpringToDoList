@@ -1,0 +1,14 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>To do list</title>
+</head>
+<body>
+<a href="/newCase">Submit case</a>
+<div id="to-do-list">
+    <div th:each="case : ${cases}">
+        <a th:attr="case-id=${case.id}" th:text="${case.id}"></a>
+    </div>
+</div>
+</body>

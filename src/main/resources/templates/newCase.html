@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/newCase}" th:object="${newCase}" method="post">
+    <p>Message: <input type="text" th:field="*{caseString}" /></p>
+    <p><input type="submit" value="Submit" /> </p>
+</form>
+</body>
+</html>
